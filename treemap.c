@@ -94,7 +94,10 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
     }
     else if(node->right != NULL && node->left != NULL){
-        /* code */
+        TreeNode * aux = minimum(node->right);
+        node->pair = aux->pair;
+        removeNode(tree,aux);
+
     }
     else{
         if (child == 1){
