@@ -173,6 +173,8 @@ Pair * nextTreeMap(TreeMap * tree) {
         //TreeNode * actual = tree->current;
         while(1)
         {
+            if(aux == NULL)break;
+
             if(aux->right != NULL)
             {
                 if(aux->parent->right != aux)
