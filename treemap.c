@@ -111,7 +111,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
         else{
             if(node->right != NULL){
-                tree->current->right = node->right;
+                tree->current->left = node->right;
                 free(node);
             }
             else{
