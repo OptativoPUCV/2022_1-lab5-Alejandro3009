@@ -295,3 +295,14 @@ treemap.c:77:26: error: 'parent' undeclared (first use in this function)
 treemap.c:77:26: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 abd40d2
+do., 24 de abr. de 2022 15:07:36: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:82:13: error: 'parent' undeclared (first use in this function)
+             parent->left = NULL;
+             ^~~~~~
+treemap.c:82:13: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+ba9bbbe
