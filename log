@@ -363,3 +363,8 @@ treemap.c:79:25: error: 'pair' undeclared (first use in this function)
 treemap.c:79:25: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 967a3fd
+do., 24 de abr. de 2022 15:16:17: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+607321d
