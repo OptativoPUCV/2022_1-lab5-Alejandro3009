@@ -76,6 +76,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
     if(node == NULL)return;
 
     if(node->left == NULL && node->right == NULL){
+        if(node->parent == NULL)printf("A");
         if(is_equal(tree,node->parent->right->pair->key,node->pair->key)){
             node->parent->right = NULL;
             free(node);
@@ -92,7 +93,6 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         removeNode(tree,aux);
     }
     else{
-        if(node == NULL)printf("A");
         if (is_equal(tree,node->parent->right->pair->key,node->pair->key)){
             if(node->right != NULL){
                 node->right->parent = node->parent;
