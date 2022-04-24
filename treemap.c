@@ -79,7 +79,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
             free(node);
         }
         else{
-            parent->left = NULL;
+            node->parent->left = NULL;
             free(node);
         }
     }
