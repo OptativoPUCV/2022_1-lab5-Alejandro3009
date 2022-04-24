@@ -352,3 +352,14 @@ do., 24 de abr. de 2022 15:14:46:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 47467a8
+do., 24 de abr. de 2022 15:16:09: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+treemap.c: In function 'removeNode':
+treemap.c:79:25: error: 'pair' undeclared (first use in this function)
+         if(node->parent>pair->key == NULL)printf("A");
+                         ^~~~
+treemap.c:79:25: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+967a3fd
