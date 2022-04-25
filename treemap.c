@@ -168,23 +168,65 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    if(tree != NULL)
+    if(tree->current == NULL)return NULL;
+
+    TreeNode * aux = tree->current->parent;
+    TreeNode * actual = tree->current;
+
+    while(aux != NULL)
     {
-        TreeNode * aux = tree->current;
-        //TreeNode * actual = tree->current;
-        while(1)
-        {
-            if(aux->right != NULL)
-            {
-                if(aux == aux->parent->right)aux = aux->parent;
-                else{
-                    aux = minimum(aux->right);
-                    searchTreeMap(tree,aux->pair->key);
-                    return aux->pair;
-                }
+        if(tree->lower_than(actual->pair->key,aux->pair->key)){
+            if(aux->right == NULL){
+                tree->current = aux;
+                return aux->pair;
             }
-            else aux = aux->parent;
+            else{
+                aux = aux->right;
+                aux = minimum(aux);
+                tree->current = aux;
+                return aux->pair;
+            }
+        }
+        else{
+            aux = aux->parent;
         }
     }
     return NULL;
 }
+
+/*
+Pair * nextTreeMap(TreeMap * tree) {
+  TreeNode *aux = tree->current;
+  if(aux->right != NULL){
+    aux = aux->right;
+    aux = minimum(aux);
+    tree->current = aux;
+    return aux->pair;
+  }
+
+  if(aux->right == NULL){
+    while(aux != NULL){
+      if(aux->parent == NULL)return NULL;
+      if(aux == tree->root)return NULL;
+      //printf("key: %d\n", (int)aux->pair->key );
+      if(tree->lower_than(aux->pair->key, aux->parent->pair->key) == 1){
+        aux = aux->parent;
+        tree->current = aux;
+        return aux->pair;
+      }
+      //else if(tree->lower_than(aux->pair->key, aux->parent->pair->key) == 0){
+        if(aux == tree->root)return NULL;
+        tree->current = aux;
+        return aux->pair;
+      }//
+      else{
+        //printf("a");
+        aux = aux->parent;
+        //if(aux == tree->root)return NULL;
+      }
+    }
+  }
+  printf("a");
+  return NULL;
+}
+*/
