@@ -171,7 +171,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 }
                 aux = aux->left;
             }
-            if (tree->lower_than(aux->pair->key, key))
+            if (tree->lower_than(aux->pair->key, key)){
                 if(tree->lower_than(key, aux->pair->key)){
                     encontrado = 1;
                     break;
