@@ -171,17 +171,15 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 }
                 aux = aux->left;
             }
-            if (tree->lower_than(aux->pair->key, key)){
+            else if (tree->lower_than(aux->pair->key, key)){
                 if(tree->lower_than(key, aux->pair->key)){
                     encontrado = 1;
                     break;
                 }
                 aux = aux->right;
             }
-
-            if(encontrado)return aux->pair;
-            else return NULL;
         }
+    if(encontrado)return aux->pair;
     return NULL;
 }
 
