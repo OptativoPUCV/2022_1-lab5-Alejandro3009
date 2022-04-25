@@ -188,8 +188,7 @@ Pair * nextTreeMap(TreeMap * tree) {
                 return aux->pair;
             }
             else{
-                aux = aux->right;
-                TreeNode * aux2 = minimum(aux);
+                TreeNode * aux2 = minimum(aux->right);
                 if(tree->lower_than(aux2->pair->key,aux->pair->key)){
                     tree->current = aux2;
                     return aux2->pair;
