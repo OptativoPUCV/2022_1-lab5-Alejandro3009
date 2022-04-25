@@ -178,13 +178,10 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 }
                 aux = aux->right;
             }
+            
+            if(encontrado)return aux->pair;
+            else return NULL;
         }
-
-        if(encontrado)return aux->pair;
-        else return NULL;
-        
-    }
-
     return NULL;
 }
 
