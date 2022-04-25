@@ -179,7 +179,8 @@ Pair * upperBound(TreeMap * tree, void* key) {
                 aux = aux->right;
             }
         }
-    if(encontrado)return aux->pair;
+        if(encontrado)return aux->pair;
+    }
     return NULL;
 }
 
