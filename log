@@ -462,3 +462,20 @@ do., 24 de abr. de 2022 22:40:07:
  tests:  21|3
 total_score: 50/70
 4110490
+do., 24 de abr. de 2022 22:54:35: 
+ treemap.c | 17 +++--------------
+ 1 file changed, 3 insertions(+), 14 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'createTreeMap':
+treemap.c:42:5: error: statement with no effect [-Werror=unused-value]
+     new
+     ^~~
+treemap.c:44:5: error: expected ';' before 'return'
+     return NULL;
+     ^~~~~~
+treemap.c:45:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+3010ed2
