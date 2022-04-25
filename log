@@ -432,3 +432,9 @@ treemap.c:176:47: error: expected expression before ')' token
                                                ^
 Compilation failed
 3cbeed0
+do., 24 de abr. de 2022 22:14:54: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|3
+total_score: 40/70
+c896756
