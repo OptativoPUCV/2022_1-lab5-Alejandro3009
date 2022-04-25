@@ -180,7 +180,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         return aux->pair;
     }
 
-    while(aux != NULL /*&& aux != tree->root*/)
+    while(aux != NULL && aux != tree->root)
     {
         if(tree->lower_than(actual->pair->key,aux->pair->key)){
             if(aux->right == NULL){
@@ -189,9 +189,15 @@ Pair * nextTreeMap(TreeMap * tree) {
             }
             else{
                 aux = aux->right;
-                aux = minimum(aux);
-                tree->current = aux;
-                return aux->pair;
+                TreeNode * aux2 = minimum(aux);
+                if(tree->lower_than(aux2->pair->key,aux->pair->key)){
+                    tree->current = aux2;
+                    return aux2->pair;
+                }
+                else{
+                    tree->current = aux;
+                    return aux->pair;
+                }
             }
         }
         else aux = aux->parent;
