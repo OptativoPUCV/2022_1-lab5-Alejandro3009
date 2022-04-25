@@ -521,3 +521,38 @@ do., 24 de abr. de 2022 23:28:59:
  tests:  26|1
 total_score: 60/70
 d7e252b
+do., 24 de abr. de 2022 23:56:41: 
+ treemap.c | 27 +++++++++++++--------------
+ 1 file changed, 13 insertions(+), 14 deletions(-)
+In file included from test.c:4:0:
+treemap.c: In function 'upperBound':
+treemap.c:174:18: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+             else if (tree->lower_than(aux->pair->key, key))
+                  ^~
+treemap.c:179:17: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+                 aux = aux->right;
+                 ^~~
+treemap.c:162:13: error: variable 'encontrado' set but not used [-Werror=unused-but-set-variable]
+         int encontrado = 0;
+             ^~~~~~~~~~
+treemap.c:183:12: error: 'encontrado' undeclared (first use in this function)
+         if(encontrado)return aux->pair;
+            ^~~~~~~~~~
+treemap.c:183:12: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:183:30: error: 'aux' undeclared (first use in this function)
+         if(encontrado)return aux->pair;
+                              ^~~
+treemap.c: At top level:
+treemap.c:188:5: error: expected identifier or '(' before 'return'
+     return NULL;
+     ^~~~~~
+treemap.c:189:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+treemap.c: In function 'upperBound':
+treemap.c:186:5: error: control reaches end of non-void function [-Werror=return-type]
+     }
+     ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+1d6bd62
